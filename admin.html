@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Volunteer Dashboard | EcoTrek</title>
+    <title>Admin Dashboard | EcoTrek</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -319,25 +319,25 @@
     <aside class="sidebar" id="sidebar">
         <div class="mb-12 px-4 flex items-center justify-between">
             <a href="index.html" class="text-2xl font-black tracking-tighter" style="color: var(--text-main); text-decoration: none;">
-                EcoTrek
+                EcoTrek <span class="text-[var(--accent-color)]"></span>
             </a>
         </div>
         
         <nav class="flex-grow">
-            <p class="text-[10px] font-bold uppercase tracking-widest mb-3 px-4 text-[var(--text-muted)]">My Journey</p>
-            <a href="#" class="nav-item active tab-btn" data-target="section-dashboard"><i class="fas fa-home"></i> My Dashboard</a>
+            <p class="text-[10px] font-bold uppercase tracking-widest mb-3 px-4 text-[var(--text-muted)]">Management</p>
+            <a href="#" class="nav-item active tab-btn" data-target="section-dashboard"><i class="fas fa-chart-pie"></i> Admin Overview</a>
             <a href="#" class="nav-item tab-btn" data-target="section-expeditions">
-                <i class="fas fa-leaf"></i> My Expeditions
+                <i class="fas fa-map-marked-alt"></i> Manage Expeditions
             </a>
-            <a href="#" class="nav-item tab-btn" data-target="section-training">
-                <i class="fas fa-laptop-code"></i> Training Camp
+            <a href="#" class="nav-item tab-btn" data-target="section-users">
+                <i class="fas fa-users"></i> User Management
             </a>
-            <a href="#" class="nav-item tab-btn" data-target="section-impact">
-                <i class="fas fa-globe-americas"></i> My Impact
+            <a href="#" class="nav-item tab-btn" data-target="section-analytics">
+                <i class="fas fa-chart-line"></i> Platform Analytics
             </a>
             
-            <p class="text-[10px] font-bold uppercase tracking-widest mt-10 mb-3 px-4 text-[var(--text-muted)]">Account</p>
-            <a href="#" class="nav-item tab-btn" data-target="section-settings"><i class="fas fa-user-cog"></i> Profile Settings</a>
+            <p class="text-[10px] font-bold uppercase tracking-widest mt-10 mb-3 px-4 text-[var(--text-muted)]">System</p>
+            <a href="#" class="nav-item tab-btn" data-target="section-settings"><i class="fas fa-cog"></i> Global Settings</a>
             
             <a href="login.html" class="nav-item mt-10 hover:text-red-500">
                 <i class="fas fa-sign-out-alt"></i> Logout
@@ -353,7 +353,7 @@
                 
                 <div class="hidden md:flex items-center rounded-lg px-4 py-2.5 w-96 transition-colors focus-within:ring-2 ring-[var(--accent-color)]" style="background: var(--card-bg); border: 1px solid var(--border-color);">
                     <i class="fas fa-search text-[var(--text-muted)] mr-3"></i>
-                    <input type="text" placeholder="Search itineraries, training docs..." class="bg-transparent border-none outline-none w-full text-sm font-medium text-[var(--text-main)] placeholder-[var(--text-muted)]">
+                    <input type="text" placeholder="Search users, expeditions, system logs..." class="bg-transparent border-none outline-none w-full text-sm font-medium text-[var(--text-main)] placeholder-[var(--text-muted)]">
                 </div>
             </div>
 
@@ -364,17 +364,18 @@
                 <div class="relative cursor-pointer group">
                     <button class="icon-btn relative">
                         <i class="fas fa-bell"></i>
+                        <span class="absolute top-2 right-2 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-[var(--card-bg)]"></span>
                     </button>
                 </div>
 
                 <div class="w-px h-8 mx-1 bg-[var(--border-color)] hidden sm:block"></div>
                 
                 <div class="flex items-center gap-2 cursor-pointer sm:bg-[var(--card-bg)] sm:border border-[var(--border-color)] sm:pl-2 sm:pr-4 sm:py-1.5 rounded-full hover:border-[var(--text-main)] transition-colors shrink-0">
-                    <div class="w-8 h-8 rounded-full bg-[var(--accent-color)] text-white flex items-center justify-center font-bold text-sm">
-                        JD
+                    <div class="w-8 h-8 rounded-full bg-slate-800 text-white flex items-center justify-center font-bold text-sm">
+                        AD
                     </div>
                     <div class="hidden sm:block text-left">
-                        <p class="text-sm font-bold text-[var(--text-main)] leading-tight"></p>
+                        
                     </div>
                     <i class="fas fa-chevron-down text-xs text-[var(--text-muted)] ml-1 hidden sm:block"></i>
                 </div>
@@ -387,14 +388,14 @@
                 <div class="hero-banner mb-8 flex flex-col lg:flex-row items-center justify-between gap-6 p-6 sm:p-8 md:p-12">
                     <div class="hero-banner-pattern"></div>
                     <div class="relative z-10 w-full lg:w-auto text-center lg:text-left">
-                        <span class="inline-block border border-emerald-500/50 bg-emerald-500/20 text-emerald-400 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded mb-4">Welcome Back, Jane!</span>
-                        <h1 class="text-3xl md:text-4xl font-black mb-2 tracking-tight text-white">Your Conservation Journey</h1>
-                        <p class="text-slate-300 text-sm md:text-base max-w-xl mx-auto lg:mx-0 font-medium">Your next volunteer expedition to the <strong class="text-[var(--accent-color)]">Amazon Basin</strong> departs on <strong class="text-[var(--accent-color)]">May 12th</strong>.</p>
+                        <span class="inline-block border border-emerald-500/50 bg-emerald-500/20 text-emerald-400 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded mb-4">Admin Session Active</span>
+                        <h1 class="text-3xl md:text-4xl font-black mb-2 tracking-tight text-white">Platform Overview</h1>
+                        <p class="text-slate-300 text-sm md:text-base max-w-xl mx-auto lg:mx-0 font-medium">System health is <strong class="text-[var(--accent-color)]">Optimal</strong>. The next major platform update is scheduled for <strong class="text-[var(--accent-color)]">May 12th</strong>.</p>
                     </div>
                     <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto relative z-10">
-                        <button class="tab-btn w-full sm:w-auto bg-transparent border-2 border-slate-500 text-white hover:bg-slate-800 px-6 py-3 font-bold text-sm uppercase tracking-wide transition-all rounded-md" data-target="section-expeditions">View Itinerary</button>
-                        <button class="w-full sm:w-auto bg-[var(--accent-color)] hover:bg-[var(--accent-dark)] text-white border-2 border-[var(--accent-color)] hover:border-[var(--accent-dark)] px-6 py-3 font-bold text-sm uppercase tracking-wide shadow-lg transition-all flex items-center justify-center gap-2 rounded-md tab-btn" data-target="section-training">
-                            <i class="fas fa-book-reader"></i> Resume Training
+                        <button class="tab-btn w-full sm:w-auto bg-transparent border-2 border-slate-500 text-white hover:bg-slate-800 px-6 py-3 font-bold text-sm uppercase tracking-wide transition-all rounded-md" data-target="section-analytics">Generate Report</button>
+                        <button class="w-full sm:w-auto bg-[var(--accent-color)] hover:bg-[var(--accent-dark)] text-white border-2 border-[var(--accent-color)] hover:border-[var(--accent-dark)] px-6 py-3 font-bold text-sm uppercase tracking-wide shadow-lg transition-all flex items-center justify-center gap-2 rounded-md tab-btn" data-target="section-users">
+                            <i class="fas fa-user-check"></i> Review Approvals
                         </button>
                     </div>
                 </div>
@@ -402,44 +403,44 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-8">
                     <div class="dash-card p-6 flex flex-col justify-center min-w-0">
                         <div class="flex justify-between items-start mb-2">
-                            <p class="text-xs font-bold uppercase tracking-widest text-[var(--text-muted)] truncate">Next Deployment</p>
+                            <p class="text-xs font-bold uppercase tracking-widest text-[var(--text-muted)] truncate">Active Volunteers</p>
                             <div class="w-8 h-8 rounded-lg color-box-blue flex items-center justify-center shrink-0 ml-2">
-                                <i class="fas fa-plane-departure"></i>
+                                <i class="fas fa-users"></i>
                             </div>
                         </div>
-                        <h3 class="text-3xl font-black text-[var(--text-main)] mt-1">May 12</h3>
-                        <p class="text-[10px] uppercase text-[var(--text-muted)] mt-2 font-bold tracking-widest">Flight 402 • Lima, Peru</p>
+                        <h3 class="text-3xl font-black text-[var(--text-main)] mt-1">1,204</h3>
+                        <p class="text-[10px] uppercase text-[var(--accent-color)] mt-2 font-bold tracking-widest"><i class="fas fa-arrow-up"></i> 12% This Month</p>
                     </div>
 
                     <div class="dash-card p-6 flex flex-col justify-center min-w-0">
                         <div class="flex justify-between items-start mb-2">
-                            <p class="text-xs font-bold uppercase tracking-widest text-[var(--text-muted)] truncate">Active Program</p>
+                            <p class="text-xs font-bold uppercase tracking-widest text-[var(--text-muted)] truncate">Live Programs</p>
                             <div class="w-8 h-8 rounded-lg color-box-green flex items-center justify-center shrink-0 ml-2">
-                                <i class="fas fa-map-marker-alt"></i>
+                                <i class="fas fa-globe-americas"></i>
                             </div>
                         </div>
-                        <h3 class="text-2xl font-black text-[var(--text-main)] mt-1 truncate">Wildlife Tracking</h3>
-                        <p class="text-[10px] uppercase text-[var(--text-muted)] mt-2 font-bold tracking-widest">Basecamp Alpha</p>
+                        <h3 class="text-3xl font-black text-[var(--text-main)] mt-1">14</h3>
+                        <p class="text-[10px] uppercase text-[var(--text-muted)] mt-2 font-bold tracking-widest">Across 8 Countries</p>
                     </div>
 
                     <div class="dash-card p-6 flex flex-col justify-center min-w-0">
                         <div class="flex justify-between items-start mb-2">
-                            <p class="text-xs font-bold uppercase tracking-widest text-[var(--text-muted)] truncate">Volunteer Hours</p>
+                            <p class="text-xs font-bold uppercase tracking-widest text-[var(--text-muted)] truncate">Total Impact Hours</p>
                             <div class="w-8 h-8 rounded-lg color-box-purple flex items-center justify-center shrink-0 ml-2">
                                 <i class="fas fa-clock"></i>
                             </div>
                         </div>
-                        <h3 class="text-3xl font-black text-[var(--text-main)] mt-1">120</h3>
-                        <p class="text-[10px] uppercase text-[var(--text-muted)] mt-2 font-bold tracking-widest">Eco-Warrior Status</p>
+                        <h3 class="text-3xl font-black text-[var(--text-main)] mt-1">45.2K</h3>
+                        <p class="text-[10px] uppercase text-[var(--text-muted)] mt-2 font-bold tracking-widest">Year to Date</p>
                     </div>
 
                     <div class="dash-card p-6 flex flex-col justify-between border-l-4 border-l-amber-500 min-w-0">
                         <div class="flex justify-between items-start mb-2 gap-2">
-                            <p class="text-xs font-bold uppercase tracking-widest text-[var(--text-muted)] truncate">Action Required</p>
+                            <p class="text-xs font-bold uppercase tracking-widest text-[var(--text-muted)] truncate">Pending Actions</p>
                         </div>
-                        <h3 class="text-xl font-bold text-[var(--text-main)] mt-1">Missing Medical Clearance</h3>
-                        <p class="text-sm text-[var(--text-muted)] mt-1 line-clamp-1">Upload your forms before May 1st.</p>
-                        <a href="#" class="text-amber-500 font-bold text-sm mt-3 hover:underline flex items-center gap-1 tab-btn" data-target="section-settings">Upload Form <i class="fas fa-arrow-right text-xs"></i></a>
+                        <h3 class="text-xl font-bold text-[var(--text-main)] mt-1">12 Clearances</h3>
+                        <p class="text-sm text-[var(--text-muted)] mt-1 line-clamp-1">Volunteer medical forms await review.</p>
+                        <a href="#" class="text-amber-500 font-bold text-sm mt-3 hover:underline flex items-center gap-1 tab-btn" data-target="section-users">Review Now <i class="fas fa-arrow-right text-xs"></i></a>
                     </div>
                 </div>
 
@@ -447,19 +448,19 @@
                     <div class="lg:col-span-2 dash-card flex flex-col min-w-0 w-full">
                         <div class="p-6 border-b border-[var(--border-color)] flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                             <div>
-                                <h3 class="text-lg font-bold text-[var(--text-main)]">Recent Expeditions</h3>
-                                <p class="text-xs font-medium text-[var(--text-muted)] mt-1">A history of your global conservation deployments.</p>
+                                <h3 class="text-lg font-bold text-[var(--text-main)]">Active Expeditions Status</h3>
+                                <p class="text-xs font-medium text-[var(--text-muted)] mt-1">Monitor currently deployed and upcoming conservation teams.</p>
                             </div>
-                            <button class="btn-sm btn-outline-table w-full sm:w-auto min-w-0 !px-4 tab-btn shrink-0" data-target="section-expeditions">View All</button>
+                            <button class="btn-sm btn-outline-table w-full sm:w-auto min-w-0 !px-4 tab-btn shrink-0" data-target="section-expeditions">Manage All</button>
                         </div>
                         
                         <div class="overflow-x-auto flex-grow w-full">
                             <table class="clean-table min-w-[600px]">
                                 <thead>
                                     <tr>
-                                        <th>Expedition ID</th>
+                                        <th>ID</th>
                                         <th>Destination</th>
-                                        <th>Dates</th>
+                                        <th>Team Lead</th>
                                         <th>Status</th>
                                         <th style="text-align: center; width: 140px;">Action</th>
                                     </tr>
@@ -468,23 +469,23 @@
                                     <tr>
                                         <td><span class="font-bold text-[var(--text-main)]">#EXP-402</span></td>
                                         <td><span class="text-[var(--text-muted)] text-sm">Amazon Basin</span></td>
-                                        <td>May 12 - May 26</td>
-                                        <td><span class="status-badge badge-warning">Preparing</span></td>
-                                        <td class="text-center"><button class="btn-sm btn-action">View</button></td>
+                                        <td>Sarah Jenkins</td>
+                                        <td><span class="status-badge badge-warning">Deploying Soon</span></td>
+                                        <td class="text-center"><button class="btn-sm btn-action">Manage</button></td>
                                     </tr>
                                     <tr>
-                                        <td><span class="font-bold text-[var(--text-main)]">#EXP-318</span></td>
+                                        <td><span class="font-bold text-[var(--text-main)]">#EXP-399</span></td>
                                         <td><span class="text-[var(--text-muted)] text-sm">Bali Reefs</span></td>
-                                        <td>Oct 05 - Oct 19, 2025</td>
-                                        <td><span class="status-badge badge-success">Completed</span></td>
-                                        <td class="text-center"><button class="btn-sm btn-outline-table">Certificate</button></td>
+                                        <td>David Chen</td>
+                                        <td><span class="status-badge badge-success">In Field</span></td>
+                                        <td class="text-center"><button class="btn-sm btn-outline-table">Logs</button></td>
                                     </tr>
                                     <tr>
-                                        <td><span class="font-bold text-[var(--text-main)]">#EXP-205</span></td>
+                                        <td><span class="font-bold text-[var(--text-main)]">#EXP-398</span></td>
                                         <td><span class="text-[var(--text-muted)] text-sm">Andes Reforestation</span></td>
-                                        <td>Jun 10 - Jun 24, 2025</td>
-                                        <td><span class="status-badge badge-success">Completed</span></td>
-                                        <td class="text-center"><button class="btn-sm btn-outline-table">Certificate</button></td>
+                                        <td>Maria Garcia</td>
+                                        <td><span class="status-badge badge-success">In Field</span></td>
+                                        <td class="text-center"><button class="btn-sm btn-outline-table">Logs</button></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -494,41 +495,41 @@
                     <div class="dash-card flex flex-col h-[450px]">
                         <div class="p-4 border-b border-[var(--border-color)] flex justify-between items-center bg-[var(--dash-bg)] rounded-t-[15px]">
                             <h3 class="font-bold text-[var(--text-main)] flex items-center gap-2 text-sm uppercase tracking-widest">
-                                <i class="fas fa-inbox text-[var(--accent-dark)]"></i> Notifications
+                                <i class="fas fa-server text-[var(--accent-dark)]"></i> System Activity
                             </h3>
                         </div>
                         
                         <div class="flex-grow overflow-y-auto bg-[var(--bg-color)]">
                             <div class="activity-item">
                                 <div class="activity-icon color-box-blue">
-                                    <i class="fas fa-plane text-sm"></i>
+                                    <i class="fas fa-user-plus text-sm"></i>
                                 </div>
                                 <div>
-                                    <p class="text-sm font-bold text-[var(--text-main)]">Flight Details Confirmed</p>
-                                    <p class="text-xs text-[var(--text-muted)] mt-1">Your e-tickets for Lima have been uploaded to your documents folder.</p>
-                                    <span class="text-[10px] font-bold text-[var(--text-muted)] mt-2 block">Just now</span>
+                                    <p class="text-sm font-bold text-[var(--text-main)]">New Volunteer Reg.</p>
+                                    <p class="text-xs text-[var(--text-muted)] mt-1">Liam O'Connor registered for the Costa Rica initiative.</p>
+                                    <span class="text-[10px] font-bold text-[var(--text-muted)] mt-2 block">10 mins ago</span>
                                 </div>
                             </div>
 
                             <div class="activity-item">
                                 <div class="activity-icon color-box-green">
-                                    <i class="fas fa-check-circle text-sm"></i>
+                                    <i class="fas fa-database text-sm"></i>
                                 </div>
                                 <div>
-                                    <p class="text-sm font-bold text-[var(--text-main)]">Module Completed</p>
-                                    <p class="text-xs text-[var(--text-muted)] mt-1">You scored 100% on the 'Jungle Safety 101' preparatory quiz.</p>
-                                    <span class="text-[10px] font-bold text-[var(--text-muted)] mt-2 block">Yesterday</span>
+                                    <p class="text-sm font-bold text-[var(--text-main)]">Server Backup Complete</p>
+                                    <p class="text-xs text-[var(--text-muted)] mt-1">Automated daily snapshot saved successfully to AWS S3.</p>
+                                    <span class="text-[10px] font-bold text-[var(--text-muted)] mt-2 block">2 hours ago</span>
                                 </div>
                             </div>
                             
                             <div class="activity-item">
                                 <div class="activity-icon color-box-purple">
-                                    <i class="fas fa-tree text-sm"></i>
+                                    <i class="fas fa-check-double text-sm"></i>
                                 </div>
                                 <div>
-                                    <p class="text-sm font-bold text-[var(--text-main)]">Impact Update</p>
-                                    <p class="text-xs text-[var(--text-muted)] mt-1">The Andean sector you worked on last year just surpassed 5,000 mature saplings!</p>
-                                    <span class="text-[10px] font-bold text-[var(--text-muted)] mt-2 block">Apr 15, 2026</span>
+                                    <p class="text-sm font-bold text-[var(--text-main)]">Expedition Completed</p>
+                                    <p class="text-xs text-[var(--text-muted)] mt-1">#EXP-390 (Madagascar) team has safely returned and logged final reports.</p>
+                                    <span class="text-[10px] font-bold text-[var(--text-muted)] mt-2 block">Yesterday</span>
                                 </div>
                             </div>
                         </div>
@@ -538,34 +539,34 @@
 
             <div id="section-expeditions" class="tab-section">
                 <div class="dash-card p-6 flex flex-col justify-center items-center text-center py-16 w-full">
-                    <i class="fas fa-map text-6xl text-[var(--accent-color)] mb-4 opacity-80"></i>
-                    <h3 class="text-xl font-bold text-[var(--text-main)]">My Expeditions</h3>
-                    <p class="text-sm text-[var(--text-muted)] mt-2 max-w-md">Browse your upcoming trips, download field guides, and review daily itineraries.</p>
-                    <button class="btn-sm btn-action mt-6 w-auto !px-6">Browse New Trips</button>
+                    <i class="fas fa-map-marked-alt text-6xl text-[var(--accent-color)] mb-4 opacity-80"></i>
+                    <h3 class="text-xl font-bold text-[var(--text-main)]">Expedition Master List</h3>
+                    <p class="text-sm text-[var(--text-muted)] mt-2 max-w-md">Create new expeditions, assign team leaders, and manage logistics and budgeting.</p>
+                    <button class="btn-sm btn-action mt-6 w-auto !px-6">Create Expedition</button>
                 </div>
             </div>
 
-            <div id="section-training" class="tab-section">
+            <div id="section-users" class="tab-section">
                 <div class="dash-card p-6 flex flex-col justify-center items-center text-center py-16 w-full">
-                    <i class="fas fa-laptop-code text-6xl text-[var(--accent-color)] mb-4 opacity-80"></i>
-                    <h3 class="text-xl font-bold text-[var(--text-main)]">Training Camp</h3>
-                    <p class="text-sm text-[var(--text-muted)] mt-2 max-w-md">Access your mandatory e-learning modules, medical forms, and safety certifications.</p>
+                    <i class="fas fa-users text-6xl text-[var(--accent-color)] mb-4 opacity-80"></i>
+                    <h3 class="text-xl font-bold text-[var(--text-main)]">User Management</h3>
+                    <p class="text-sm text-[var(--text-muted)] mt-2 max-w-md">Review volunteer applications, approve medical clearances, and oversee training progress.</p>
                 </div>
             </div>
 
-            <div id="section-impact" class="tab-section">
+            <div id="section-analytics" class="tab-section">
                 <div class="dash-card p-6 flex flex-col justify-center items-center text-center py-16 w-full">
                     <i class="fas fa-chart-line text-6xl text-[var(--accent-color)] mb-4 opacity-80"></i>
-                    <h3 class="text-xl font-bold text-[var(--text-main)]">My Impact</h3>
-                    <p class="text-sm text-[var(--text-muted)] mt-2 max-w-md">Track your personal carbon offset, total trees planted, and wildlife assisted.</p>
+                    <h3 class="text-xl font-bold text-[var(--text-main)]">Platform Analytics</h3>
+                    <p class="text-sm text-[var(--text-muted)] mt-2 max-w-md">Global impact reporting, financial overviews, and environmental offset statistics.</p>
                 </div>
             </div>
 
             <div id="section-settings" class="tab-section">
                 <div class="dash-card p-6 flex flex-col justify-center items-center text-center py-16 w-full">
-                    <i class="fas fa-user-cog text-6xl text-[var(--accent-color)] mb-4 opacity-80"></i>
-                    <h3 class="text-xl font-bold text-[var(--text-main)]">Profile Settings</h3>
-                    <p class="text-sm text-[var(--text-muted)] mt-2 max-w-md">Update your passport details, emergency contacts, and dietary preferences for basecamp.</p>
+                    <i class="fas fa-cogs text-6xl text-[var(--accent-color)] mb-4 opacity-80"></i>
+                    <h3 class="text-xl font-bold text-[var(--text-main)]">Global Settings</h3>
+                    <p class="text-sm text-[var(--text-muted)] mt-2 max-w-md">Manage API keys, payment gateways, automated email templates, and system preferences.</p>
                 </div>
             </div>
 
