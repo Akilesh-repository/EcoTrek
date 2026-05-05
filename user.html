@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Volunteer Dashboard | EcoTrek</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/jpeg" href="images\15153418.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
@@ -35,12 +36,13 @@
             --accent-dark: #059669;  
             --border-color: #E2E8F0;
             
-            /* Sidebar Variables - WHITE THEME */
-            --sidebar-bg: #ffffff; 
-            --sidebar-text: #0F172A;
-            --sidebar-muted: #64748B;
-            --sidebar-hover: #F0FDF4;
-            --sidebar-active: rgba(16, 185, 129, 0.08);
+            /* Sidebar Variables - PREMIUM GREEN THEME */
+            --sidebar-bg: linear-gradient(180deg, #059669 0%, #064e3b 100%); 
+            --sidebar-text: #ffffff;
+            --sidebar-muted: rgba(255, 255, 255, 0.7);
+            --sidebar-hover: rgba(255, 255, 255, 0.1);
+            --sidebar-active: rgba(255, 255, 255, 0.2);
+            --sidebar-border: transparent;
             
             --sidebar-width: 280px;
             --card-bg: #ffffff;
@@ -61,12 +63,13 @@
             --accent-color: #10B981; 
             --accent-dark: #059669;
             
-            /* Dark Mode Sidebar */
-            --sidebar-bg: #0F172A;
-            --sidebar-text: #F8FAFC;
-            --sidebar-muted: #94A3B8;
-            --sidebar-hover: rgba(16, 185, 129, 0.15);
-            --sidebar-active: rgba(16, 185, 129, 0.15);
+            /* Dark Mode Sidebar - Deep Forest Green */
+            --sidebar-bg: linear-gradient(180deg, #064e3b 0%, #022c22 100%);
+            --sidebar-text: #ffffff;
+            --sidebar-muted: rgba(255, 255, 255, 0.6);
+            --sidebar-hover: rgba(255, 255, 255, 0.05);
+            --sidebar-active: rgba(255, 255, 255, 0.15);
+            --sidebar-border: transparent;
 
             --shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
             --shadow-hover: 0 10px 25px -5px rgba(16, 185, 129, 0.15);
@@ -97,7 +100,7 @@
         .sidebar {
             width: var(--sidebar-width);
             background: var(--sidebar-bg);
-            border-right: 1px solid var(--border-color);
+            border-right: 1px solid var(--sidebar-border);
             height: 100dvh; 
             position: fixed;
             top: 0;
@@ -110,7 +113,7 @@
             flex-direction: column;
             color: var(--sidebar-text);
         }
-        [dir="rtl"] .sidebar { left: auto; right: 0; border-right: none; border-left: 1px solid var(--border-color); }
+        [dir="rtl"] .sidebar { left: auto; right: 0; border-right: none; border-left: 1px solid var(--sidebar-border); }
 
         .main-wrapper {
             margin-left: var(--sidebar-width);
@@ -198,16 +201,16 @@
         
         .nav-item.active {
             background: var(--sidebar-active);
-            color: var(--accent-color);
-            border-left: 4px solid var(--accent-color);
+            color: var(--sidebar-text);
+            border-left: 4px solid #ffffff;
             border-radius: 0 8px 8px 0;
         }
         [dir="rtl"] .nav-item.active {
             border-left: none;
-            border-right: 4px solid var(--accent-color);
+            border-right: 4px solid #ffffff;
             border-radius: 8px 0 0 8px;
         }
-        .nav-item.active i { color: var(--accent-color); }
+        .nav-item.active i { color: var(--sidebar-text); }
 
         /* TOPBAR BUTTONS */
         .icon-btn {
@@ -318,13 +321,14 @@
     
     <aside class="sidebar" id="sidebar">
         <div class="mb-12 px-4 flex items-center justify-between">
-            <a href="index.html" class="text-2xl font-black tracking-tighter" style="color: var(--text-main); text-decoration: none;">
+            <!-- Set explicitly back to #000000 -->
+            <a href="index.html" class="text-2xl font-black tracking-tighter" style="color: #000000; text-decoration: none;">
                 EcoTrek
             </a>
         </div>
         
         <nav class="flex-grow">
-            <p class="text-[10px] font-bold uppercase tracking-widest mb-3 px-4 text-[var(--text-muted)]">My Journey</p>
+            <p class="text-[10px] font-bold uppercase tracking-widest mb-3 px-4 text-[var(--sidebar-muted)]">My Journey</p>
             <a href="#" class="nav-item active tab-btn" data-target="section-dashboard"><i class="fas fa-home"></i> My Dashboard</a>
             <a href="#" class="nav-item tab-btn" data-target="section-expeditions">
                 <i class="fas fa-leaf"></i> My Expeditions
@@ -336,10 +340,10 @@
                 <i class="fas fa-globe-americas"></i> My Impact
             </a>
             
-            <p class="text-[10px] font-bold uppercase tracking-widest mt-10 mb-3 px-4 text-[var(--text-muted)]">Account</p>
+            <p class="text-[10px] font-bold uppercase tracking-widest mt-10 mb-3 px-4 text-[var(--sidebar-muted)]">Account</p>
             <a href="#" class="nav-item tab-btn" data-target="section-settings"><i class="fas fa-user-cog"></i> Profile Settings</a>
             
-            <a href="login.html" class="nav-item mt-10 hover:text-red-500">
+            <a href="login.html" class="nav-item mt-10 hover:text-red-400">
                 <i class="fas fa-sign-out-alt"></i> Logout
             </a>
         </nav>
